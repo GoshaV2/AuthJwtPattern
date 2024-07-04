@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    password: ${POSTGRES_PASSWORD}
+    username: ${POSTGRES_USERNAME}
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?reWriteBatchedInserts=true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    token:
+      access:
+        secret: ${ACCESS_TOKEN_SECRET}
+        expiration: ${ACCESS_TOKEN_EXPIRED}
+      refresh:
+        secret: ${REFRESH_TOKEN_SECRET}
+        expiration: ${REFRESH_TOKEN_EXPIRED}
+
